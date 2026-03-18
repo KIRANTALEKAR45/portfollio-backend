@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="admin.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="login-container">
+  <h2>Admin Login</h2>
+
+  <input type="text" id="username" placeholder="Name" required>
+  <input type="password" id="password" placeholder="Password" required>
+
+  <button onclick="login()">Login</button>
+
+  <p id="error" style="color:red; margin-top:10px;"></p>
+</div>
+
+<script>
+function login() {
+
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+
+  fetch("http://localhost:5050/api/admin/login", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      username: username,
+      password: password
+    })
+  })
+  .then(res => res.json())
+  .then(data => {
+
+    console.log(data);
+
+    if (data.status === "success") {
+      sessionStorage.setItem("adminLoggedIn", "true");
+      window.location.href = "admin.html";
+    } else {
+      document.getElementById("error").innerText = data.message;
+    }
+  })
+  .catch(err => {
+    console.log(err);
+    document.getElementById("error").innerText = "Server Error";
+  });
+}
+</script>
+
+
+</body>
+</html>
