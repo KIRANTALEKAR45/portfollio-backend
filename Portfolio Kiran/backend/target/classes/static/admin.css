@@ -1,0 +1,129 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #141e30, #243b55);
+  color: white;
+}
+
+/* Login Page */
+.login-container {
+  width: 350px;
+  margin: 100px auto;
+  background: white;
+  color: black;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.login-container input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  background: #243b55;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background: #141e30;
+}
+
+#error {
+  color: red;
+}
+
+/* Dashboard */
+.dashboard {
+  padding: 30px;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar button {
+  padding: 8px 15px;
+  background: crimson;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.card {
+  margin-top: 20px;
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.delete-btn {
+  background: crimson;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+
+
+
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+section {
+    background: #1e293b;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+button {
+    padding: 10px;
+    background: #22c55e;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #16a34a;
+}
+
+li {
+    margin: 10px 0;
+}

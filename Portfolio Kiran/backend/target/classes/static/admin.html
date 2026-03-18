@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<script>
+if (sessionStorage.getItem("adminLoggedIn") !== "true") {
+  window.location.href = "admin-login.html";
+}
+</script>
+
+<div class="dashboard">
+
+  <div class="top-bar">
+    <h2>Admin Dashboard</h2>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <div class="card">
+    <h3>Contact Messages</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Message</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="data"></tbody>
+    </table>
+  </div>
+
+</div>
+
+<script>
+function loadMessages() {
+  fetch("http://localhost:5050/api/contact")
+    .then(res => res.json())
+    .then(data => {
+      const table = document.getElementById("data");
+      table.innerHTML = "";
+
+      data.forEach(contact => {
+        table.innerHTML += `
+          <tr>
+            <td>${contact.id}</td>
+            <td>${contact.name}</td>
+            <td>${contact.email}</td>
+            <td>${contact.message}</td>
+            <td>
+              <button class="delete-btn" onclick="deleteMessage(${contact.id})">
+                Delete
+              </button>
+            </td>
+          </tr>
+        `;
+      });
+    });
+}
+
+function deleteMessage(id) {
+  fetch(`http://localhost:5050/api/contact/${id}`, {
+    method: "DELETE"
+  })
+  .then(() => loadMessages());
+}
+
+function logout() {
+  sessionStorage.removeItem("adminLoggedIn");
+  window.location.href = "index.html";
+}
+
+loadMessages();
+</script>
+
+<div class="container">
+    <h1>Admin Dashboard</h1>
+
+    <!-- SKILLS -->
+    <section>
+        <h2>Skills</h2>
+        <input id="skillName" placeholder="Skill Name">
+        <input id="skillLevel" placeholder="Level">
+        <button onclick="addSkill()">Add Skill</button>
+        <ul id="skillList"></ul>
+    </section>
+
+    <!-- PROJECTS -->
+    <section>
+        <h2>Projects</h2>
+        <input id="projectTitle" placeholder="Title">
+        <input id="projectDesc" placeholder="Description">
+        <button onclick="addProject()">Add Project</button>
+        <ul id="projectList"></ul>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section>
+        <h2>Experience</h2>
+        <input id="expRole" placeholder="Role">
+        <input id="expCompany" placeholder="Company">
+        <button onclick="addExperience()">Add Experience</button>
+        <ul id="expList"></ul>
+    </section>
+
+</div>
+
+<script src="admin.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kiran Talekar | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="nav-right">
+      <a href="admin-login.html" class="admin-btn">Login</a>
+    </div>
+  </nav>
+
+  <!-- ===== DARK MODE BUTTON ===== -->
+  <button class="toggle" onclick="toggleMode()">☀🌙</button>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <h1>Hi There I'm Kiran Talekar</h1>
+    <p id="typing"></p>
+    <a href="Kiran Resume.pdf" class="btn" download>Download Resume</a>
+  </header>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="about reveal">
+    <h2>About Me</h2>
+    <p>
+      Final-year CSE Undergraduate Student at TGPCET Nagpur. I am a
+      self-taught developer with a passion for Java Developer and problem
+      solving. I have a strong background in software development and have
+      worked on some projects.
+    </p>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="reveal">
+    <h2>Skills</h2>
+
+    <div class="skills">
+
+    <div id="skillsContainer" class="skills"></div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="reveal">
+    <h2>Projects</h2>
+
+    <div id="projectsContainer" class="projects"></div>
+
+  </section>
+
+  <!-- ===== EDUCATION ===== -->
+  <section id="education" class="reveal">
+    <h2>Education</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>B.Tech in Computer Science</h3>
+        <h4>[ Present ]</h4>
+        <p>TGPCET Nagpur</p>
+        <p>[2022–2026]</p>
+      </div>
+
+      <div class="card">
+        <h3>Higher Secondary [12th]</h3>
+        <p>Navin Swatantrya Kanisht Mahavidyalay Madalmohi</p>
+        <p>[2020–2021]</p>
+      </div>
+
+      <div class="card">
+        <h3>Secondary School [10th]</h3>
+        <p>Nutan Koleshwar Vidyamandir Kolgaon</p>
+        <p>[2018–2019]</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section id="experience" class="reveal">
+    <h2>Experience</h2>
+
+    <div id="experienceContainer" class="projects"></div>
+
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="contact reveal">
+    <h2>Contact</h2>
+
+<form id="contactForm">
+  <input type="text" id="name" placeholder="Your Name" required />
+  <input type="email" id="email" placeholder="Your Email" required />
+  <textarea id="message" placeholder="Your Message" required></textarea>
+  <button id="subbutton" type="submit">Submit</button>
+</form>
+
+   <div class="social">
+      <a href="mailto:kirantalekar999@gmail.com">Email</a>
+      <a href="https://github.com/KIRANTALEKAR45">GitHub</a>
+      <a href="https://linkedin.com">LinkedIn</a>
+    </div>
+  </section>
+
+  <footer>© 2026 Kiran | All Rights Reserved</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
